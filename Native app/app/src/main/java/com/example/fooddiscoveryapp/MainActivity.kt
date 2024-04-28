@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fooddiscoveryapp.ml.FruitModel
 import com.example.fooddiscoveryapp.ml.Model
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.ImageProcessor
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             var tensorImage= TensorImage(DataType.FLOAT32)
             tensorImage.load(bitmap)
 
-            val model = Model.newInstance(this)
+            val model = FruitModel.newInstance(this)
 
             tensorImage = imageProcessor.process(tensorImage)
 
